@@ -1,5 +1,54 @@
+// Responsive sizes
+$tablet-width-portrait: 500px;
+$tablet-width: 769px;
+$desktop-width: 992px;
+$large-desktop-width: 1440px;
+$extra-large-destop: 1700px;
+
+// Variables
+
 $PrimaryColor: #4C4AE6;
 $AccentColor: #EF9D18;
 $White: #FFF;
 $Black: #000;
 $Background: #EDF1F5;
+
+// Responsive utils
+
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media (min-width: #{$tablet-width-portrait}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin largeDesktop {
+  @media (min-width: #{$large-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin extraLargeDesktop {
+  @media (min-width: #{$extra-large-destop}) {
+    @content;
+  }
+}
+

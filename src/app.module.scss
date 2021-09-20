@@ -1,6 +1,6 @@
 @import './styles/variables';
 
-.app {
+.app, body {
   background-color: $Background;
 }
 
@@ -8,4 +8,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include tablet-portrait {
+    display: grid;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include tablet {
+    margin-left: 80px;
+    margin-right: 80px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  @include desktop {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
