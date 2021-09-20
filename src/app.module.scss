@@ -1,0 +1,11 @@
+@import './styles/variables';
+
+.app {
+  background-color: $Background;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
