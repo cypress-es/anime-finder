@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+cy-tests/node_modules
 /.pnp
 .pnp.js
 

@@ -1,0 +1,67 @@
+{
+  "status_code": 200,
+  "message": "Page 1 contains 10 anime. Last page number is 1 for a total of 10 anime",
+  "data": {
+    "current_page": 1,
+    "count": 10,
+    "documents": [
+      {
+        "anilist_id": 227,
+        "mal_id": 227,
+        "format": 4,
+        "status": 0,
+        "titles": {
+          "en": "FLCL",
+          "jp": "フリクリ",
+          "it": "FLCL"
+        },
+        "descriptions": {
+          "en": "Naota is a detached sixth grader afflicted by the pangs of puberty. He's fooling around with his brother's ex-girlfriend when a crazed girl on a motor scooter runs him over, brains him with a bass guitar, and moves into his house. This pink-haired girl, Haruko - who claims she's an alien - hurls Naota into the middle of a mega-corporation's secret agenda. Oh, and now giant battling robots shoot from his skull. Mix in mind-bending animation and tunes that echo through your cerebellum to top off the trip that will have you falling hard for <i>FLCL</i>.<br>\n<br>\n(Source: Funimation)",
+          "it": "FLCL (Fooly Cooly) segue le vicende di Naota, un ragazzino timido e introverso, il cui fratello è partito per l’ America per giocare a baseball, lasciando in Giappone la sua ragazza, Mamimi. Quest’ultima si attacca molto a Naota, con cui sviluppa un rapporto abbastanza strano, si diverte a istigarlo e provocarlo (abbracciandolo e simili), ma in fondo gli è davvero affezionata.s<br>La città in cui vivono è sovrastata da un’immensa costruzione a forma di ferro da stiro, che a determinate ore rilascia gigantesche nuvole di vapore. “Nella città non accade mai nulla, soltanto l’ordinario”… ma l’entrata in scena di Haruto è tutt’altro che ordinaria. A bordo della sua vespa investe Naota e, al posto di soccorrerlo, torna indietro lo colpisce con la sua terribile chitarra elettrica in testa. Gli spunta sulla fronte uno strano bernoccolo, che cresce sempre di più fintanto che da esso ne fuoriesce un robot, Canti, che da quel giorno vivrà con lui."
+        },
+        "start_date": "2000-04-26T00:00:00Z",
+        "end_date": "2001-03-16T00:00:00Z",
+        "season_period": 1,
+        "season_year": 2000,
+        "episodes_count": 6,
+        "episode_duration": 25,
+        "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx227-kxQ3PDHrrqp5.jpg",
+        "cover_color": "#e4865d",
+        "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/227.jpg",
+        "genres": [
+          "Action",
+          "Comedy",
+          "Mecha",
+          "Sci-Fi",
+          "Coming of Age",
+          "Surreal Comedy",
+          "Philosophy",
+          "Male Protagonist",
+          "Age Gap",
+          "Meta",
+          "Denpa",
+          "Robots",
+          "Love Triangle",
+          "Aliens",
+          "Real Robot",
+          "Parody",
+          "Gods",
+          "Musical",
+          "Mopeds",
+          "Vore",
+          "Body Horror",
+          "Super Robot",
+          "Nudity",
+          "Baseball",
+          "CGI",
+          "Episodic"
+        ],
+        "sequel": 2881,
+        "score": 78,
+        "id": 9520
+      }
+    ],
+    "last_page": 1
+  },
+  "version": "1"
+}

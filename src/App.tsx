@@ -14,10 +14,16 @@ const App = (): JSX.Element => {
         setItems(items);
       });
   }, []);
+  const searchAnime = (searchValue: string) => {
+    api.getAnimeList(searchValue)
+      .then(items => {
+        setItems(items);
+      });
+  };
   return (
     <div className={style.app}>
       <Navbar />
-      <SearchForm />
+      <SearchForm onSubmit={searchAnime} />
       <div className={style.listContainer}>
         {items && items.map(item => (
           <ListItem

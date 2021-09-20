@@ -11,8 +11,12 @@
       rgba(var(--color-shadow-blue),.15),0 4px 4px
       rgba(var(--color-shadow-blue),.05);
     @include tablet {
-      min-width: 150px;
-      max-width: 150px;
+      min-width: 120px;
+      max-width: 120px;
+    }
+    @include largeDesktop {
+      min-width: 160px;
+      max-width: 160px;
     }
   }
   .title {
