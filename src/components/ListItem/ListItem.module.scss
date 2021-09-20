@@ -10,8 +10,20 @@
     box-shadow: 0 14px 30px
       rgba(var(--color-shadow-blue),.15),0 4px 4px
       rgba(var(--color-shadow-blue),.05);
+    @include tablet {
+      min-width: 150px;
+      max-width: 150px;
+    }
   }
   .title {
     color: $Black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    @include desktop {
+      font-size: 2rem;
+    }
   }
 }
