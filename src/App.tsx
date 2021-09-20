@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import ListItem from './components/ListItem/ListItem';
+import SearchForm from './components/SearchForm/SearchForm';
 import mock from './mock.json';
 import style from './app.module.scss';
 
 const App = (): JSX.Element => (
   <div className={style.app}>
     <Navbar />
+    <SearchForm />
     <div className={style.listContainer}>
       {mock.map(item => (
         <ListItem
