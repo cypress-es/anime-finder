@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 cy-tests/node_modules
+cy-tests/cypress/videos
+cy-tests/cypress/screenshots
 /.pnp
 .pnp.js
 
