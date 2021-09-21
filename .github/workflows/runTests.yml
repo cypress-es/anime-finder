@@ -17,7 +17,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          install-command: npm i && cd cy-tests && npm i
-          command: npm run test:ci:cypress
+          working-directory: cy-tests
           start: npm start
           wait-on: 'http://localhost:3000'
