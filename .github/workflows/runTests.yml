@@ -10,6 +10,10 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,4 +31,12 @@ jobs:
         with:
           working-directory: cy-tests
           wait-on: 'http://localhost:3000'
+          parallel: true
+          record: true
+          group: 'Action tests'
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CY_RECORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
 
