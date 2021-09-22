@@ -9,7 +9,7 @@ describe('Homepage tests', () => {
     }).as('getAnimeList');
     cy.visit('/');
     cy.wait('@getAnimeList');
-    cy.get('[data-cy=list-item]').should('have.length', 5);
+    cy.get('[data-cy=list-item]').should('have.length', 500);
     cy.get('[data-cy=search-form]').should('be.visible');
   });
 });
