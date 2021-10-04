@@ -4,7 +4,7 @@ interface Langs {
 }
 
 export interface Options {
-  [key: string]: number
+  [key: string]: number | string
 }
 export interface Filters {
   title: string

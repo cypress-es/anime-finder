@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
-import Select, { SingleValue } from 'react-select';
+import React, { useState, useEffect } from 'react';
+import Select, { SingleValue, MultiValue } from 'react-select';
 import { STATUS_OPTIONS, FORMAT_OPTIONS, SEASON_PERIOD } from './data';
+import * as api from '../../repository/api';
 import { SearchFormProps, SelectOptions } from './SearchForm.model';
 import style from './SearchForm.module.scss';
 
 const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
   const [inputValue, setValue] = useState('');
+  const [genresOptions, setOptions] = useState<SelectOptions[]>([]);
   const [selectedOptions, setSelectedOptions] = useState({});
+  useEffect(() => {
+    api.getGenres()
+      .then(genres => {
+        const options: SelectOptions[] = genres.map(genre => ({
+          value: genre, label: genre
+        }));
+        setOptions(options);
+      });
+  }, []);
   const changeSelect = (type: string) => (newValue: SingleValue<SelectOptions>) => {
     if (newValue) {
       setSelectedOptions({
@@ -15,6 +26,15 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
       });
     }
   }
+  const changeMultipleSelect = (type: string) => (newValues: MultiValue<SelectOptions>) => {
+    if (newValues) {
+      const values = newValues.map(({ value }: SelectOptions) => value);
+      setSelectedOptions({
+        ...selectedOptions,
+        [type]: values,
+      });
+    }
+  };
   return (
     <form
       data-cy="search-form"
@@ -38,6 +58,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
             setValue(e.currentTarget.value)
           }}
         />
+        <label htmlFor="searchAnime">Status</label>
         <Select
           name="status"
           options={STATUS_OPTIONS}
@@ -45,25 +66,30 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
           classNamePrefix="select"
           onChange={changeSelect('status')}
         />
+        <label htmlFor="searchAnime">Format</label>
         <Select
           name="format"
           options={FORMAT_OPTIONS}
           className="basic-multi-select"
           classNamePrefix="select"
-          onChange={changeSelect('status')}
+          onChange={changeSelect('format')}
         />
+        <label htmlFor="searchAnime">Format</label>
         <Select
-          name="period"
+          name="season_period"
           options={SEASON_PERIOD}
           className="basic-multi-select"
           classNamePrefix="select"
-          onChange={changeSelect('status')}
+          onChange={changeSelect('season_period')}
         />
+        <label htmlFor="searchAnime">Genre</label>
         <Select
+          isMulti
           name="genres"
-          options={SEASON_PERIOD}
+          options={genresOptions}
           className="basic-multi-select"
           classNamePrefix="select"
+          onChange={changeMultipleSelect('genres')}
         />
         <input
           className="button-primary"

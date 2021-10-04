@@ -20,7 +20,6 @@ const App = (): JSX.Element => {
       title: filters.inputValue,
       options: filters.selectedOptions,
     };
-    console.log(apiFilter);
     api.getAnimeList(apiFilter)
       .then(items => {
         setItems(items);

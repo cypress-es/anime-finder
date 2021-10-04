@@ -1,5 +1,5 @@
 export interface SelectOptions {
-  value: number
+  value: number | string
   label: string
 }
 
