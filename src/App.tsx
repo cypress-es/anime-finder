@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import ListItem from './components/ListItem/ListItem';
 import SearchForm from './components/SearchForm/SearchForm';
+import { SubmitParams } from './components/SearchForm/SearchForm.model';
 import * as api from './repository/api';
 import { AnimeItem } from './repository/APImodel';
 import style from './app.module.scss';
@@ -14,8 +15,13 @@ const App = (): JSX.Element => {
         setItems(items);
       });
   }, []);
-  const searchAnime = (searchValue: string) => {
-    api.getAnimeList(searchValue)
+  const searchAnime = (filters: SubmitParams) => {
+    const apiFilter = {
+      title: filters.inputValue,
+      options: filters.selectedOptions,
+    };
+    console.log(apiFilter);
+    api.getAnimeList(apiFilter)
       .then(items => {
         setItems(items);
       });

@@ -50,15 +50,17 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
           options={FORMAT_OPTIONS}
           className="basic-multi-select"
           classNamePrefix="select"
+          onChange={changeSelect('status')}
         />
         <Select
           name="period"
           options={SEASON_PERIOD}
           className="basic-multi-select"
           classNamePrefix="select"
+          onChange={changeSelect('status')}
         />
         <Select
-          name="period"
+          name="genres"
           options={SEASON_PERIOD}
           className="basic-multi-select"
           classNamePrefix="select"

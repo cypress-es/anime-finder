@@ -1,11 +1,23 @@
 import axios from 'axios'
-import { AnimeItem } from './APImodel'
+import { AnimeItem, Filters, Options } from './APImodel'
 
 const API = 'https://api.aniapi.com';
 
-const getAnimeList = async (searchValue?: string): Promise<AnimeItem[]> => {
+const queryBuilder = (query: string, type: string, option: Options): string => (
+  option[type] !== undefined ? `${query}&${type}=${option[type]}`: query
+);
+
+const getAnimeList = async (filters?: Filters): Promise<AnimeItem[]> => {
   try {
-    const query = searchValue ? `&title=${searchValue}` : '';
+    const queryFilters = filters || {} as Filters;
+    let query = queryFilters.title ? `&title=${queryFilters.title}` : '';
+    if (queryFilters.options) {
+      query = queryBuilder(query, 'status', queryFilters.options);
+      query = queryBuilder(query, 'format', queryFilters.options);
+      query = queryBuilder(query, 'period', queryFilters.options);
+      query = queryBuilder(query, 'genres', queryFilters.options);
+    }
+    console.log(query);
     const { data } = await axios.get(`${API}/v1/anime?per_page=10${query}`);
     const list = data.data.documents ? data.data.documents : [];
     return list as AnimeItem[];

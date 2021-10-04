@@ -6,7 +6,7 @@ export interface SelectOptions {
 interface Options {
   [key: string]: number
 }
-interface SubmitParams {
+export interface SubmitParams {
   inputValue: string
   selectedOptions: Options
 }

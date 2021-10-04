@@ -3,6 +3,14 @@ interface Langs {
   jp: string
 }
 
+export interface Options {
+  [key: string]: number
+}
+export interface Filters {
+  title: string
+  options: Options
+}
+
 export interface AnimeItem {
   anilist_id: number,
   mal_id: number,

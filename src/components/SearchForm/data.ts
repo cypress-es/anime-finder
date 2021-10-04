@@ -1,7 +1,4 @@
-export interface SelectOptions {
-  value: number
-  label: string
-}
+import { SelectOptions } from './SearchForm.model';
 
 export const STATUS_OPTIONS: SelectOptions[] = [
   { value: 0, label: 'Finished' },
