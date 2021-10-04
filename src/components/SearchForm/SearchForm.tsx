@@ -47,55 +47,67 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
       }}
     >
       <div className={style.container}>
-        <label htmlFor="searchAnime">Search yor anime</label>
-        <input
-          className="u-full-width"
-          data-cy="search-form-input"
-          type="text"
-          id="searchAnime"
-          value={inputValue}
-          onChange={(e: React.FormEvent<HTMLInputElement>): void => {
-            setValue(e.currentTarget.value)
-          }}
-        />
-        <label htmlFor="searchAnime">Status</label>
-        <Select
-          name="status"
-          options={STATUS_OPTIONS}
-          className="basic-multi-select"
-          classNamePrefix="select"
-          onChange={changeSelect('status')}
-        />
-        <label htmlFor="searchAnime">Format</label>
-        <Select
-          name="format"
-          options={FORMAT_OPTIONS}
-          className="basic-multi-select"
-          classNamePrefix="select"
-          onChange={changeSelect('format')}
-        />
-        <label htmlFor="searchAnime">Format</label>
-        <Select
-          name="season_period"
-          options={SEASON_PERIOD}
-          className="basic-multi-select"
-          classNamePrefix="select"
-          onChange={changeSelect('season_period')}
-        />
-        <label htmlFor="searchAnime">Genre</label>
-        <Select
-          isMulti
-          name="genres"
-          options={genresOptions}
-          className="basic-multi-select"
-          classNamePrefix="select"
-          onChange={changeMultipleSelect('genres')}
-        />
-        <input
-          className="button-primary"
-          type="submit"
-          value="Submit"
-        />
+        <div>
+          <label htmlFor="searchAnime">Search yor anime</label>
+          <input
+            className="u-full-width"
+            data-cy="search-form-input"
+            type="text"
+            id="searchAnime"
+            value={inputValue}
+            onChange={(e: React.FormEvent<HTMLInputElement>): void => {
+              setValue(e.currentTarget.value)
+            }}
+          />
+        </div>
+        <div>
+          <label htmlFor="searchAnime">Status</label>
+          <Select
+            name="status"
+            options={STATUS_OPTIONS}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={changeSelect('status')}
+          />
+        </div>
+        <div>
+          <label htmlFor="searchAnime">Format</label>
+          <Select
+            name="format"
+            options={FORMAT_OPTIONS}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={changeSelect('format')}
+          />
+        </div>
+        <div>
+          <label htmlFor="searchAnime">Format</label>
+          <Select
+            name="season_period"
+            options={SEASON_PERIOD}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={changeSelect('season_period')}
+          />
+        </div>
+        <div>
+          <label htmlFor="searchAnime">Genre</label>
+          <Select
+            isMulti
+            name="genres"
+            options={genresOptions}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={changeMultipleSelect('genres')}
+          />
+        </div>
+        <div>
+          <input
+            className="button-primary"
+            type="submit"
+            value="Submit"
+          />
+        </div>
       </div>
     </form>
   );
