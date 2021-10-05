@@ -17,6 +17,12 @@ const SelectPage: React.FC = () => (
         }),
       }}
     />
+    <Select
+      isMulti
+      name="genres"
+      options={STATUS_OPTIONS}
+      classNamePrefix="filter-multi-select"
+    />
   </div>      
 );
 
