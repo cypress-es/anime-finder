@@ -32,6 +32,7 @@ const HomePage = (): JSX.Element => {
         {items && items.map(item => (
           <ListItem
             key={item.id}
+            id={item.id}
             title={item.titles.en}
             image={item.cover_image}
           />

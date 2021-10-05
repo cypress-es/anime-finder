@@ -44,7 +44,18 @@ const getAnimeList = async (filters?: Filters): Promise<AnimeItem[]> => {
   }
 };
 
+const getAnimeDetail = async (animeId: number): Promise<AnimeItem> => {
+  try {
+    const { data } = await axios.get(`${API}/v1/anime/${animeId}`);
+    const detail = data.status_code === 200 ? data.data : null;
+    return detail as AnimeItem;
+  } catch (err) {
+    throw err;
+  }
+};
+
 export {
   getAnimeList,
   getGenres,
+  getAnimeDetail,
 };

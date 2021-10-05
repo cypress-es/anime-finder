@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: $PrimaryColor;
+  a {
+    text-decoration: none;
+  }
   .container {
     display: flex;
     align-items: center;
