@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/Navbar/Navbar';
-import ListItem from './components/ListItem/ListItem';
-import SearchForm from './components/SearchForm/SearchForm';
-import { SubmitParams } from './components/SearchForm/SearchForm.model';
-import * as api from './repository/api';
-import { AnimeItem } from './repository/APImodel';
-import style from './app.module.scss';
+import Navbar from '../../components/Navbar/Navbar';
+import ListItem from '../../components/ListItem/ListItem';
+import SearchForm from '../../components/SearchForm/SearchForm';
+import { SubmitParams } from '../../components/SearchForm/SearchForm.model';
+import * as api from '../../repository/api';
+import { AnimeItem } from '../../repository/APImodel';
+import style from './HomePage.module.scss';
 
-const App = (): JSX.Element => {
+const HomePage = (): JSX.Element => {
   const [items, setItems] = useState<AnimeItem[]|null>(null);
   useEffect(() => {
     api.getAnimeList()
@@ -42,4 +42,4 @@ const App = (): JSX.Element => {
   );
 };
 
-export default App;
+export default HomePage;
