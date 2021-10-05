@@ -1,0 +1,13 @@
+@import './../../styles/variables';
+
+.errorPage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "HelveticaNeue", Arial, Helvetica, sans-serif;
+  h1 {
+    font-size: 12rem;
+    font-weight: 700;
+  }
+}

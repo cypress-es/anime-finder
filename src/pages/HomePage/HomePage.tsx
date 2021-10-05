@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import { useEffect, useState } from 'react';
+import MainLayout from '../../layouts/MainLayout/MainLayout';
 import ListItem from '../../components/ListItem/ListItem';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { SubmitParams } from '../../components/SearchForm/SearchForm.model';
@@ -26,8 +26,7 @@ const HomePage = (): JSX.Element => {
       });
   };
   return (
-    <div className={style.app}>
-      <Navbar />
+    <MainLayout>
       <SearchForm onSubmit={searchAnime} />
       <div className={style.listContainer}>
         {items && items.map(item => (
@@ -38,7 +37,7 @@ const HomePage = (): JSX.Element => {
           />
         ))}
       </div>
-    </div>
+    </MainLayout>
   );
 };
 
