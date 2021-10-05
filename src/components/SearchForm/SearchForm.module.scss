@@ -8,4 +8,18 @@
   @include tablet {
     width: 50%;
   }
+  .titleInput {
+    height: 52px;
+    margin-bottom: 0;
+  }
+  .actionsContainer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .filterButton {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
