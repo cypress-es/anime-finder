@@ -72,8 +72,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="status"
                 options={STATUS_OPTIONS}
-                className="basic-multi-select"
-                classNamePrefix="select"
+                classNamePrefix="filter-status-select"
                 styles={{
                   placeholder: styles => ({
                     ...styles,
@@ -88,8 +87,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="format"
                 options={FORMAT_OPTIONS}
-                className="basic-multi-select"
-                classNamePrefix="select"
+                classNamePrefix="filter-format-select"
                 styles={{
                   placeholder: styles => ({
                     ...styles,
@@ -104,8 +102,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="season_period"
                 options={SEASON_PERIOD}
-                className="basic-multi-select"
-                classNamePrefix="select"
+                classNamePrefix="filter-season_period-select"
                 styles={{
                   placeholder: styles => ({
                     ...styles,
@@ -121,8 +118,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
                 isMulti
                 name="genres"
                 options={genresOptions}
-                className="basic-multi-select"
-                classNamePrefix="select"
+                classNamePrefix="filter-genres-select"
                 onChange={changeMultipleSelect('genres')}
               />
             </div>
@@ -131,18 +127,20 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
         <div className={style.actionsContainer}>
           <input
             className="button-primary"
+            data-cy="submit-button"
             type="submit"
             value="Submit"
           />
           <button
             className={`button-primary ${style.filterButton}`}
+            data-cy="filter-button"
             onClick={() => toggleFilter(!showFilters)}
           >
             {!showFilters && (
-              <img src={filterIcon} alt="filter icon on" />
+              <img data-cy="filter-on-image" src={filterIcon} alt="filter icon on" />
             )}
             {showFilters && (
-              <img src={filterIconOff} alt="filter icon off" />
+              <img data-cy="filter-off-image" src={filterIconOff} alt="filter icon off" />
             )}
           </button>
         </div>
