@@ -107,10 +107,9 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
             data-cy="filter-button"
             onClick={() => toggleFilter(!showFilters)}
           >
-            {!showFilters && (
+            {!showFilters ? (
               <img data-cy="filter-on-image" src={filterIcon} alt="filter icon on" />
-            )}
-            {showFilters && (
+            ) : (
               <img data-cy="filter-off-image" src={filterIconOff} alt="filter icon off" />
             )}
           </button>
