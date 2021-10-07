@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import Select, { SingleValue, MultiValue } from 'react-select';
 import { STATUS_OPTIONS, FORMAT_OPTIONS, SEASON_PERIOD } from './data';
 import * as api from '../../repository/api';
 import filterIcon from '../../assets/icons/filter_alt_white_24dp.svg';
 import filterIconOff from '../../assets/icons/filter_alt_off_white_24dp.svg';
 import { SearchFormProps, SelectOptions } from './SearchForm.model';
+import { SelectValue } from '../Select/Select.model';
+import Select from '../Select/Select';
+
 import style from './SearchForm.module.scss';
 
-// TODO: refactor in multiple components
 const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
   const [inputValue, setValue] = useState('');
   const [showFilters, toggleFilter] = useState<boolean>(false);
   const [genresOptions, setOptions] = useState<SelectOptions[]>([]);
   const [selectedOptions, setSelectedOptions] = useState({});
+
   useEffect(() => {
     api.getGenres()
       .then(genres => {
@@ -22,23 +24,14 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
         setOptions(options);
       });
   }, []);
-  const changeSelect = (type: string) => (newValue: SingleValue<SelectOptions>) => {
-    if (newValue) {
-      setSelectedOptions({
-        ...selectedOptions,
-        [type]: newValue.value,
-      });
-    }
-  }
-  const changeMultipleSelect = (type: string) => (newValues: MultiValue<SelectOptions>) => {
-    if (newValues) {
-      const values = newValues.map(({ value }: SelectOptions) => value);
-      setSelectedOptions({
-        ...selectedOptions,
-        [type]: values,
-      });
-    }
+
+  const changeSelect = (type: string) => (newValue: SelectValue) => {
+    setSelectedOptions({
+      ...selectedOptions,
+      [type]: newValue,
+    });
   };
+
   return (
     <form
       data-cy="search-form"
@@ -72,13 +65,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="status"
                 options={STATUS_OPTIONS}
-                classNamePrefix="filter-status-select"
-                styles={{
-                  placeholder: styles => ({
-                    ...styles,
-                    textAlign: 'left',
-                  }),
-                }}
                 onChange={changeSelect('status')}
               />
             </div>
@@ -87,13 +73,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="format"
                 options={FORMAT_OPTIONS}
-                classNamePrefix="filter-format-select"
-                styles={{
-                  placeholder: styles => ({
-                    ...styles,
-                    textAlign: 'left',
-                  }),
-                }}
                 onChange={changeSelect('format')}
               />
             </div>
@@ -102,13 +81,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
               <Select
                 name="season_period"
                 options={SEASON_PERIOD}
-                classNamePrefix="filter-season_period-select"
-                styles={{
-                  placeholder: styles => ({
-                    ...styles,
-                    textAlign: 'left',
-                  }),
-                }}
                 onChange={changeSelect('season_period')}
               />
             </div>
@@ -118,8 +90,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
                 isMulti
                 name="genres"
                 options={genresOptions}
-                classNamePrefix="filter-genres-select"
-                onChange={changeMultipleSelect('genres')}
+                onChange={changeSelect('genres')}
               />
             </div>
           </div>
@@ -136,10 +107,9 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
             data-cy="filter-button"
             onClick={() => toggleFilter(!showFilters)}
           >
-            {!showFilters && (
+            {!showFilters ? (
               <img data-cy="filter-on-image" src={filterIcon} alt="filter icon on" />
-            )}
-            {showFilters && (
+            ) : (
               <img data-cy="filter-off-image" src={filterIconOff} alt="filter icon off" />
             )}
           </button>
