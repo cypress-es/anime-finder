@@ -2,7 +2,7 @@ import ReactSelect, { SingleValue, MultiValue } from 'react-select';
 import { SelectOptions } from '../SearchForm/SearchForm.model';
 import { SelectableValue, SelectProps } from './Select.model';
 
-const Select: React.FC<SelectProps> = ({ name, isMulti, options, onChange }) => {
+const Select: React.FC<SelectProps> = ({ name, isMulti = false, options, onChange }) => {
   const onSelectChange = (currentSelection: SelectableValue) => {
     if (isMulti) {
       const selectedValues = currentSelection as MultiValue<SelectOptions>;

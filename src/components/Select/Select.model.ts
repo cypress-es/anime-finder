@@ -1,10 +1,10 @@
 import { MultiValue, SingleValue } from 'react-select';
 import { SelectOptions } from '../SearchForm/SearchForm.model';
 
-type SelectValue = string | number | (string | number)[] | undefined;
+export type SelectValue = string | number | (string | number)[] | undefined;
 
 export interface SelectProps {
-  name?: string,
+  name: string,
   isMulti?: boolean,
   options: SelectOptions[],
   onChange: (selectedValues: SelectValue) => void,
