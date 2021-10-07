@@ -22,6 +22,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "install:cypress": "cd cy-tests && npm i",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
