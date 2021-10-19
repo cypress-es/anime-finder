@@ -11,7 +11,10 @@
     "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
     "axios": "^0.21.4",
+    "compression": "^1.7.4",
     "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -26,6 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "heroku-postbuild": "npm run build",
     "test:dev:cypress": "cd cy-tests && npm run cy:open",
     "test:ci:cypress": "cd cy-tests && npm run cy:run"
   },
