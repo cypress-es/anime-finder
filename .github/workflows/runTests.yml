@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
-      - run: npm start &
+      - run: npm run start:front &
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run

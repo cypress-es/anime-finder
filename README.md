@@ -6,7 +6,7 @@ This is a basic project to start using cypress with the [aniapi](https://aniapi.
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start:front`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

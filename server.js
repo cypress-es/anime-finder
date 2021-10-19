@@ -13,7 +13,7 @@ app.use(helmet({
 }));
 app.use(compression());
 
-app.use(express.static('dist'));
+app.use(express.static('build'));
 app.get('/*', (req, res) => {
   res.sendFile(join(__dirname, 'build', 'index.html'));
 });
