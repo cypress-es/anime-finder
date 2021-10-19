@@ -26,11 +26,12 @@
   },
   "scripts": {
     "install:cypress": "cd cy-tests && npm i",
-    "start": "react-scripts start",
+    "start:front": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "heroku-postbuild": "npm run build",
     "test:dev:cypress": "cd cy-tests && npm run cy:open",
+    "start": "NODE_ENV=production node server.js",
     "test:ci:cypress": "cd cy-tests && npm run cy:run"
   },
   "eslintConfig": {
