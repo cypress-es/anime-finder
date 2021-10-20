@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.9",
     "axios": "^0.21.4",
     "compression": "^1.7.4",
+    "config-req": "^2.0.0",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
