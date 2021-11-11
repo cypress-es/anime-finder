@@ -14,7 +14,10 @@ const start = async options => {
     // Establish and verify connection
     await client.db('admin').command({ ping: 1 });
     console.log("Connected successfully to server");
-    return client.db(options.databaseName);
+    return {
+      dbInstance: client.db(options.databaseName),
+      client,
+    };
   } catch (error) {
     // Ensures that the client will close when you finish/error
     console.error(error);

@@ -30,7 +30,7 @@
     "install:cypress": "cd cy-tests && npm i",
     "start:front": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --detectOpenHandles --forceExit",
     "heroku-postbuild": "npm run build",
     "docker": "docker-compose --file docker/development/docker-compose.yml up -d --force-recreate",
     "test:dev:cypress": "cd cy-tests && npm run cy:open",
@@ -56,6 +56,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.0"
+    "@types/react-router-dom": "^5.3.0",
+    "jest": "^27.3.1",
+    "jest-junit": "^13.0.0",
+    "supertest": "^6.1.6"
   }
 }

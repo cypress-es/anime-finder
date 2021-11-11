@@ -1,8 +1,4 @@
-const mongodbClient = require('../mongodb');
-
-const start = async ({ config }) => {
-  const dbClient = await mongodbClient(config);
-
+const start = async ({ dbClient }) => {
   const saveUser = async (user, provider) => {
     const userCollection = dbClient.collection('user');
     userCollection.update({
