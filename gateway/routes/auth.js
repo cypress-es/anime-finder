@@ -12,6 +12,10 @@ const initRouter = ({ store, config }) => {
     res.json(authController.getConfig())
   ));
 
+  router.get('/oauth', (req, res) => {
+    return res.json(authController.registerUser(req.query.code))
+  });
+
   return router;
 };
 

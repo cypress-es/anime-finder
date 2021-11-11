@@ -24,4 +24,15 @@ describe('Endpoint "/api/v1/config', () => {
         });
       })
   ));
+
+  it('oauth route', () => (
+    request
+      .get('/api/v1/auth/oauth')
+      .expect(200)
+      .then(({ body }) => {
+        expect(body).toEqual({
+          requestIdentity: 'https://github.com/login/oauth/authorize',
+        });
+      })
+  ));
 });

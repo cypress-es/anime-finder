@@ -43,7 +43,16 @@ const initAuthController = ({ store, config }) => {
         authorization: `token ${githubResponse.access_token}`,
       },
     });
-    console.log(store);
+    const databaseUser = {
+      email: userInfo.email,
+      name: userInfo.name,
+      metadata: {
+        type: userInfo.type,
+        html_url: userInfo.html_url,
+        followers: userInfo.followers,
+      },
+    };
+    await store.saveUser(databaseUser, 'github');
   };
   return {
     getConfig,
