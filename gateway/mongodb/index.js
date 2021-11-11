@@ -1,25 +1,20 @@
 const { MongoClient } = require('mongodb');
-// Connection URI
-const uri =
-  "mongodb+srv://sample-hostname:27017/?maxPoolSize=20&w=majority";
-
-const databaseName = 'animefinder';
 
 let client = null;
 
-const start = async () => {
+const start = async options => {
   try {
     // Connect the client to the server
     if (!client) {
       client = await MongoClient.connect(
-        uri,
+        options.uri,
         { useUnifiedTopology: true },
       );
     }
     // Establish and verify connection
     await client.db('admin').command({ ping: 1 });
     console.log("Connected successfully to server");
-    return client.db(databaseName);
+    return client.db(options.databaseName);
   } catch (error) {
     // Ensures that the client will close when you finish/error
     console.error(error);
