@@ -36,7 +36,7 @@ describe('Endpoint "/api/v1/config', () => {
       })
   ));
 
-  it.only('oauth route', async () => {
+  it('oauth route', async () => {
     nock('https://github.com')
       .post('/login/oauth/access_token')
       .reply(200, tokenResponse);
