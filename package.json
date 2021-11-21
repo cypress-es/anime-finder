@@ -12,9 +12,12 @@
     "@types/react-dom": "^17.0.9",
     "axios": "^0.21.4",
     "compression": "^1.7.4",
+    "config-req": "^2.0.0",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.4",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,8 +31,9 @@
     "install:cypress": "cd cy-tests && npm i",
     "start:front": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --detectOpenHandles --forceExit",
     "heroku-postbuild": "npm run build",
+    "docker": "docker-compose --file docker/development/docker-compose.yml up -d --force-recreate",
     "test:dev:cypress": "cd cy-tests && npm run cy:open",
     "start": "NODE_ENV=production node server.js",
     "test:ci:cypress": "cd cy-tests && npm run cy:run"
@@ -53,6 +57,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.0"
+    "@types/react-router-dom": "^5.3.0",
+    "jest": "^27.3.1",
+    "jest-junit": "^13.0.0",
+    "nock": "^13.2.0",
+    "supertest": "^6.1.6"
   }
 }
