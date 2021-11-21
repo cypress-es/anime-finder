@@ -1,4 +1,7 @@
 const request = require('config-req');
+const {
+  signToken,
+} = require('../lib/jwt');
 
 const initAuthController = ({ store, config }) => {
   const api = request(config.authAPI);
@@ -36,6 +39,7 @@ const initAuthController = ({ store, config }) => {
   };
   
   const registerUser = async code => {
+    const platform = 'github';
     const githubResponse = await getAuthToken(code);
     const { data: userInfo } = await api.userInfo({
       headers: {
@@ -52,8 +56,13 @@ const initAuthController = ({ store, config }) => {
         followers: userInfo.followers,
       },
     };
-    await store.saveUser(databaseUser, 'github');
-    return databaseUser;
+    await store.saveUser(databaseUser, platform);
+    const jwt = signToken({ email: userInfo.name, platform }, config.jwtSecret);
+    return {
+      jwt,
+      name: userInfo.name,
+      email: userInfo.email,
+    };
   };
   return {
     getConfig,

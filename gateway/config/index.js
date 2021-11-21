@@ -4,6 +4,7 @@ module.exports = {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     redirectURI: process.env.REDIRECT_URI,
+    jwtSecret: process.env.JWT_SECRET || 'secreto',
     authAPI: {
       accessToken: {
         url: 'https://github.com/login/oauth/access_token',

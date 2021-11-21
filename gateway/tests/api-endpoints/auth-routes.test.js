@@ -60,6 +60,8 @@ describe('Endpoint "/api/v1/config', () => {
           name: 'Test user',
         });
         expect(body).toHaveProperty('jwt', 'email', 'name');
+        expect(body.email).toEqual('test-user@gmail.com');
+        expect(body.name).toEqual('Test user');
       });
   });
 });
