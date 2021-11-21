@@ -36,6 +36,12 @@ describe('Endpoint "/api/v1/config', () => {
       })
   ));
 
+  it('should return 400 error when code is not sent', () => (
+    request
+      .get('/api/v1/auth/oauth')
+      .expect(400)
+  ));
+
   it('oauth route', async () => {
     nock('https://github.com')
       .post('/login/oauth/access_token')
