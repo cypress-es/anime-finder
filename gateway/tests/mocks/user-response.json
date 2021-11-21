@@ -1,8 +1,8 @@
 {
   "login": "test-user",
   "id": 12685053,
-  "node_id": "MDQ6VXNlcjEyNjg1MDUz",
-  "avatar_url": "https://avatars.githubusercontent.com/u/213123?v=4",
+  "node_id": "node_id",
+  "avatar_url": "https://avatars.githubusercontent.com/u/uidrandom?v=4",
   "gravatar_id": "",
   "url": "https://api.github.com/users/test-user",
   "html_url": "https://github.com/test-user",
