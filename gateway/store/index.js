@@ -1,7 +1,7 @@
-const start = async ({ dbClient }) => {
-  const saveUser = async (user, provider) => {
-    const userCollection = dbClient.collection('user');
-    userCollection.update({
+const start = async ({ dbInstance }) => {
+  const userCollection = dbInstance.collection('user');
+  const saveUser = (user, provider) => {
+    return userCollection.updateOne({
       email: user.email,
     }, {
       $set: {
@@ -12,8 +12,13 @@ const start = async ({ dbClient }) => {
     }, { upsert: true });
   };
 
+  const removeAll = () => (
+    userCollection.deleteMany({})
+  );
+
   return {
     saveUser,
+    removeAll,
   };
 };
 

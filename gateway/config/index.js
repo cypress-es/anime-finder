@@ -11,7 +11,7 @@ module.exports = {
       },
       userInfo: {
         url: 'https://api.github.com/user',
-        method: 'post',
+        method: 'get',
       },
     },
   },

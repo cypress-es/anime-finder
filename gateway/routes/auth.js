@@ -12,8 +12,9 @@ const initRouter = ({ store, config }) => {
     res.json(authController.getConfig())
   ));
 
-  router.get('/oauth', (req, res) => {
-    return res.json(authController.registerUser(req.query.code))
+  router.get('/oauth', async (req, res) => {
+    const response = await authController.registerUser(req.query.code)
+    return res.json(response);
   });
 
   return router;

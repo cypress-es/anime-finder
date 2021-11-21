@@ -20,7 +20,7 @@ const start = async options => {
     };
   } catch (error) {
     // Ensures that the client will close when you finish/error
-    console.error(error);
+    console.error('error mongodb connection', error);
     await client.close();
   }
 };

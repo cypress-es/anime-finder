@@ -53,6 +53,7 @@ const initAuthController = ({ store, config }) => {
       },
     };
     await store.saveUser(databaseUser, 'github');
+    return databaseUser;
   };
   return {
     getConfig,
