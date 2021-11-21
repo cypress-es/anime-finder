@@ -30,7 +30,7 @@ const startServer = async () => {
     res.sendFile(join(__dirname, 'build', 'index.html'));
   });
 
-  return { app, store, mongodb: client };
+  return { app, store, mongodb: client, dbInstance };
 };
 
 module.exports = startServer;
