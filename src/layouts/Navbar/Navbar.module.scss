@@ -10,6 +10,23 @@
   a {
     text-decoration: none;
   }
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $White;
+    color: $Black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    span {
+      margin-right: 5px;
+    }
+  }
   .container {
     display: flex;
     align-items: center;
@@ -22,6 +39,10 @@
     .title {
       color: $White;
       margin: 0;
+      display: none;
+      @include tablet {
+        display: block;
+      }
     }
   }
 }

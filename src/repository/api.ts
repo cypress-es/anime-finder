@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { AnimeItem, Filters, Options } from './APImodel'
+import { AnimeItem, Filters, Options, APIConfig } from './APImodel'
 
 const API = 'https://api.aniapi.com';
 
@@ -54,8 +54,18 @@ const getAnimeDetail = async (animeId: number): Promise<AnimeItem> => {
   }
 };
 
+const getProjectConfig = async (): Promise<APIConfig> => {
+  try {
+    const { data } = await axios.get('/api/v1/auth/config');
+    return data as APIConfig;
+  } catch (err) {
+    throw err;
+  }
+};
+
 export {
   getAnimeList,
   getGenres,
   getAnimeDetail,
+  getProjectConfig,
 };

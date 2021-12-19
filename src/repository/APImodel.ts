@@ -32,3 +32,7 @@ export interface AnimeItem {
   score: number,
   id: number
 }
+
+export interface APIConfig {
+  requestIdentity: string
+}
