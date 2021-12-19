@@ -7,7 +7,7 @@ const initAuthController = ({ store, config }) => {
   const api = request(config.authAPI);
 
   const getConfig = () => ({
-    requestIdentity: config.requestIdentity,
+    requestIdentity: `${config.requestIdentity}?client_id=${config.clientId}`,
   });
 
   /**

@@ -21,10 +21,10 @@ const Navbar: React.FC<NavbarProps> = ({ accessLink }): JSX.Element => (
           <AuthComponent
             showWithAuth={false}
           >
-            <Link className={style.button} to={accessLink}>
+            <a className={style.button} href={accessLink}>
               <span>Login</span>
               <img className={style.github} src={github} alt="github login" />
-            </Link>
+            </a>
           </AuthComponent>
         )}
       </div>

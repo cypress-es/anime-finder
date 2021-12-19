@@ -31,7 +31,7 @@ describe('Endpoint "/api/v1/config', () => {
       .expect(200)
       .then(({ body }) => {
         expect(body).toEqual({
-          requestIdentity: 'https://github.com/login/oauth/authorize',
+          requestIdentity: 'https://github.com/login/oauth/authorize?client_id=clientId',
         });
       })
   ));
