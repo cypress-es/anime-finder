@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthComponent from '../AuthComponent/AuthComponent';
 import logo from '../../assets/logo.png';
 import github from '../../assets/icons/github.svg';
 import style from './Navbar.module.scss';
@@ -17,10 +18,14 @@ const Navbar: React.FC<NavbarProps> = ({ accessLink }): JSX.Element => (
       </Link>
       <div>
         {accessLink && (
-          <Link className={style.button} to={accessLink}>
-            <span>Login</span>
-            <img className={style.github} src={github} alt="github login" />
-          </Link>
+          <AuthComponent
+            showWithAuth={false}
+          >
+            <Link className={style.button} to={accessLink}>
+              <span>Login</span>
+              <img className={style.github} src={github} alt="github login" />
+            </Link>
+          </AuthComponent>
         )}
       </div>
     </div>
