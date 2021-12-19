@@ -36,3 +36,9 @@ export interface AnimeItem {
 export interface APIConfig {
   requestIdentity: string
 }
+
+export interface APIAuthResponse {
+  jwt: string
+  email: string
+  name: string
+}
