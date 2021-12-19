@@ -24,3 +24,5 @@ cy-tests/cypress/screenshots
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.env

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const serverApp = require('./gateway/app');
 
 const PORT = process.env.PORT || 4000;

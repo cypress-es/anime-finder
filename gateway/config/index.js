@@ -3,7 +3,7 @@ module.exports = {
     requestIdentity: 'https://github.com/login/oauth/authorize',
     clientId: process.env.CLIENT_ID || 'clientId',
     clientSecret: process.env.CLIENT_SECRET,
-    redirectURI: process.env.REDIRECT_URI,
+    redirectURI: process.env.REDIRECT_URI || 'http://localhost:3000',
     jwtSecret: process.env.JWT_SECRET || 'secreto',
     authAPI: {
       accessToken: {

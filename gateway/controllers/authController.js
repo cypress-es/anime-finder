@@ -7,7 +7,7 @@ const initAuthController = ({ store, config }) => {
   const api = request(config.authAPI);
 
   const getConfig = () => ({
-    requestIdentity: `${config.requestIdentity}?client_id=${config.clientId}`,
+    requestIdentity: `${config.requestIdentity}?client_id=${config.clientId}&redirect_uri=${config.redirectURI}`,
   });
 
   /**
@@ -57,7 +57,7 @@ const initAuthController = ({ store, config }) => {
       },
     };
     await store.saveUser(databaseUser, platform);
-    const jwt = signToken({ email: userInfo.name, platform }, config.jwtSecret);
+    const jwt = signToken({ email: userInfo.email, platform }, config.jwtSecret);
     return {
       jwt,
       name: userInfo.name,
