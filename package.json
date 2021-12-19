@@ -2,6 +2,7 @@
   "name": "anime-finder",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://0.0.0.0:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -31,7 +32,7 @@
   },
   "scripts": {
     "install:cypress": "cd cy-tests && npm i",
-    "start:front": "react-scripts start",
+    "start:front": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "react-scripts build",
     "test": "jest --detectOpenHandles --forceExit",
     "heroku-postbuild": "npm run build",
