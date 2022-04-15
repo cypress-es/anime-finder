@@ -14,6 +14,7 @@
     "compression": "^1.7.4",
     "config-req": "^2.0.0",
     "cross-env": "^7.0.3",
+    "cypress": "^9.5.4",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
@@ -28,15 +29,14 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "install:cypress": "cd cy-tests && npm i",
     "start:front": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "jest --detectOpenHandles --forceExit",
     "heroku-postbuild": "npm run build",
     "docker": "docker-compose --file docker/development/docker-compose.yml up -d --force-recreate",
-    "test:dev:cypress": "cd cy-tests && npm run cy:open",
     "start": "NODE_ENV=production node server.js",
-    "test:ci:cypress": "cd cy-tests && npm run cy:run"
+    "cy:open": "cross-env node_modules/.bin/cypress open",
+    "cy:run": "cross-env node_modules/.bin/cypress run"
   },
   "eslintConfig": {
     "extends": [
