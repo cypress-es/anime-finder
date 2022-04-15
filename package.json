@@ -29,8 +29,8 @@
   },
   "scripts": {
     "install:cypress": "cd cy-tests && npm i",
-    "start:front": "react-scripts start",
-    "build": "react-scripts build",
+    "start:front": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "jest --detectOpenHandles --forceExit",
     "heroku-postbuild": "npm run build",
     "docker": "docker-compose --file docker/development/docker-compose.yml up -d --force-recreate",
