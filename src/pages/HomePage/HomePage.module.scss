@@ -1,22 +1,18 @@
 @import './../../styles/variables';
 
 .listContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @include tablet-portrait {
-    display: grid;
-    margin-left: 50px;
-    margin-right: 50px;
-    grid-template-columns: repeat(2, 1fr);  
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 0 10px;
   @include tablet {
-    margin-left: 80px;
-    margin-right: 80px;
+    gap: 35px;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    margin: 0 40px;
   }
   @include desktop {
+    max-width: 1000px;
+    margin: 0 auto;
     grid-template-columns: repeat(5, 1fr);
   }
 }

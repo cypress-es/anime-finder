@@ -1,28 +1,27 @@
 @import '../../styles/variables';
 
 .container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 30px 0 30px;
-  a {
-    text-decoration: none;
+  text-decoration: none;
+  figure {
+    margin: 0;
   }
-  .img {
-    width: 100%;
+  .imageContainer {
+    margin-bottom: 10px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    background-color: $BackgroundImage;
     border-radius: 4px;
-    box-shadow: 0 14px 30px
-      rgba(var(--color-shadow-blue),.15),0 4px 4px
-      rgba(var(--color-shadow-blue),.05);
-    @include tablet {
-      min-width: 120px;
-      max-width: 120px;
-    }
-    @include largeDesktop {
-      min-width: 160px;
-      max-width: 160px;
+    .img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 14px 30px
+        rgba(var(--color-shadow-blue),.15),0 4px 4px
+        rgba(var(--color-shadow-blue),.05);
     }
   }
   .title {
+    font-size: 1.2rem;
     color: $Black;
     text-overflow: ellipsis;
     overflow: hidden;

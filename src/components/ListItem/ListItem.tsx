@@ -9,12 +9,21 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({ title, image, id }) => (
-  <div className={style.container} data-cy="list-item">
-    <Link to={`/animes/${id}`}>
-      <img className={style.img} src={image} alt={title} />
-      <h3 className={style.title}>{title}</h3>
-    </Link>
-  </div>
+  <Link className={style.container} to={`/animes/${id}`}>
+    <article data-cy="list-item">
+      <figure>
+        <div className={style.imageContainer}>
+          <img
+            className={style.img}
+            src={image}
+            alt={title}
+            title={title}
+          />
+        </div>
+        <figcaption className={style.title}>{title}</figcaption>
+      </figure>
+    </article>
+  </Link>
 );
 
 export default ListItem;
